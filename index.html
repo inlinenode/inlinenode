@@ -1,355 +1,117 @@
-<!DOCTYPE html>
+<!-- InlineNode - Minimal static site (index.html)
+Instructions:
+1) Save this file as index.html (already saved in the canvas). Download it from the canvas and put it in the root of your GitHub repository (e.g., repo named username.github.io) OR deploy via Netlify/Vercel.
+2) To use GitHub Pages for your custom domain (inlinenode.com) -> create a repo, push this file to the branch 'main' (or 'gh-pages' if using a project site), then in the repository settings enable GitHub Pages -> set the custom domain to inlinenode.com.
+3) Update GoDaddy DNS (see below) to point the domain to GitHub Pages. After DNS propagates, enable HTTPS in GitHub Pages settings.
+
+This file is intentionally minimal, fast, responsive, and easy to edit. Replace placeholder email and social links as needed.
+-->
+
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Pages Troubleshooting - inlinenode.com</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 20px;
-            background: linear-gradient(135deg, #6e48aa, #9d50bb);
-            color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            margin: 25px 0 15px;
-            color: #6e48aa;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 8px;
-        }
-        
-        h3 {
-            font-size: 1.3rem;
-            margin: 20px 0 10px;
-            color: #7d3c98;
-        }
-        
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .issue {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-left: 5px solid #9d50bb;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        
-        .solution {
-            background-color: #e8f4fc;
-            padding: 20px;
-            border-left: 5px solid #2196F3;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        
-        .tip {
-            background-color: #fffde7;
-            padding: 15px;
-            border-left: 5px solid #ffeb3b;
-            margin: 15px 0;
-            border-radius: 4px;
-        }
-        
-        code {
-            background-color: #272822;
-            color: #f8f8f2;
-            padding: 3px 6px;
-            border-radius: 4px;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9rem;
-        }
-        
-        pre {
-            background-color: #272822;
-            color: #f8f8f2;
-            padding: 15px;
-            border-radius: 8px;
-            overflow-x: auto;
-            margin: 15px 0;
-            font-family: 'Fira Code', monospace;
-            line-height: 1.5;
-        }
-        
-        ul, ol {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-        }
-        
-        .step {
-            background-color: white;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-        
-        .status {
-            display: inline-block;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        
-        .status-ok {
-            background-color: #4caf50;
-            color: white;
-        }
-        
-        .status-warning {
-            background-color: #ff9800;
-            color: white;
-        }
-        
-        .status-error {
-            background-color: #f44336;
-            color: white;
-        }
-        
-        .checklist {
-            margin: 20px 0;
-        }
-        
-        .check-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .check-icon {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            color: #777;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-            }
-            
-            .container {
-                padding: 20px;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>InlineNode — Embedded systems, debugging & firmware</title>
+  <meta name="description" content="InlineNode — Practical embedded debugging, firmware tutorials and tools for engineers.">
+  <meta name="author" content="InlineNode">
+  <style>
+    :root{--bg:#0b1220;--card:#0f1724;--accent:#00b4d8;--muted:#98a6b3;--text:#e6eef8}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071226 0%, #081427 100%);color:var(--text);}
+    .wrap{max-width:1100px;margin:40px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,#06202a,#003b4c);display:flex;align-items:center;justify-content:center;font-weight:800}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:28px;align-items:center}
+    h1{font-size:32px;margin:0}
+    p.lead{color:var(--muted);line-height:1.6}
+    .cta{display:inline-block;padding:10px 16px;border-radius:8px;background:var(--accent);color:#012; text-decoration:none;font-weight:700}
+    .card{background:rgba(255,255,255,0.02);padding:16px;border-radius:10px}
+    .tools{display:flex;flex-direction:column;gap:10px}
+    input,button{font-size:15px}
+    .subscribe{display:flex;gap:8px}
+    input[type=email]{flex:1;padding:10px;border-radius:8px;border:0}
+    button.subscribe-btn{padding:10px 12px;border-radius:8px;border:0;background:#0ea5a5;color:#002a2a;font-weight:700}
+    footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;}.logo{width:46px;height:46px}}
+  </style>
 </head>
 <body>
+  <div class="wrap">
     <header>
-        <h1>GitHub Pages Troubleshooting Guide</h1>
-        <p>Resolving "File Not Found" errors for inlinenode.com</p>
+      <div class="brand">
+        <div class="logo">IN</div>
+        <div>
+          <div style="font-weight:800">InlineNode</div>
+          <div style="color:var(--muted);font-size:13px">Embedded debugging • Firmware • Practical guides</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
-    
-    <div class="container">
-        <h2>Common Causes of GitHub Pages "File Not Found" Errors</h2>
-        
-        <div class="issue">
-            <h3>Problem: File Not Found Error</h3>
-            <p>You're seeing the GitHub Pages "File not found" error after deploying your website. You have an <code>inlinenode_index.html</code> file and a <code>CNAME</code> file in your repository, but the site isn't working properly.</p>
-        </div>
-        
-        <h2>Potential Solutions</h2>
-        
-        <div class="solution">
-            <h3>1. Incorrect Index File Name</h3>
-            <p>GitHub Pages looks for specific filenames as the entry point for your website. The standard index file should be named <code>index.html</code> (all lowercase).</p>
-            
-            <div class="step">
-                <p><span class="status status-error">Action Required</span> Rename your <code>inlinenode_index.html</code> to <code>index.html</code>:</p>
-                <pre>git mv inlinenode_index.html index.html
-git commit -m "Rename index file for GitHub Pages"
-git push</pre>
-            </div>
-            
-            <div class="tip">
-                <p><strong>Tip:</strong> If you need to keep your original filename for other purposes, you can:</p>
-                <ul>
-                    <li>Use a symbolic link (if using a local build process)</li>
-                    <li>Configure a redirect in your repository settings (if supported)</li>
-                    <li>Use a custom GitHub Actions workflow to handle the build process</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="solution">
-            <h3>2. CNAME File Configuration</h3>
-            <p>Your CNAME file must be properly formatted and placed in the correct location.</p>
-            
-            <div class="step">
-                <p><span class="status status-warning">Check</span> Verify your CNAME file:</p>
-                <ul>
-                    <li>It should be in the root directory of your repository</li>
-                    <li>It should contain only your domain name: <code>inlinenode.com</code> (no http:// or www)</li>
-                    <li>It should not have any file extension</li>
-                </ul>
-            </div>
-            
-            <div class="step">
-                <p><span class="status status-warning">Check</span> Also configure your DNS settings:</p>
-                <ul>
-                    <li>For apex domain (inlinenode.com): Create A records pointing to GitHub's IP addresses:
-                        <ul>
-                            <li>185.199.108.153</li>
-                            <li>185.199.109.153</li>
-                            <li>185.199.110.153</li>
-                            <li>185.199.111.153</li>
-                        </ul>
-                    </li>
-                    <li>For www subdomain (www.inlinenode.com): Create a CNAME record pointing to <code>yourusername.github.io</code></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="solution">
-            <h3>3. Repository Structure and Settings</h3>
-            <p>Incorrect repository configuration is a common cause of deployment issues.</p>
-            
-            <div class="checklist">
-                <div class="check-item">
-                    <span class="check-icon">✅</span>
-                    <span>Ensure your repository is public (unless you're using GitHub Pro)</span>
-                </div>
-                <div class="check-item">
-                    <span class="check-icon">✅</span>
-                    <span>Go to Settings → Pages → Source and select the correct branch</span>
-                </div>
-                <div class="check-item">
-                    <span class="check-icon">✅</span>
-                    <span>If using a custom branch, make sure it contains the necessary files</span>
-                </div>
-                <div class="check-item">
-                    <span class="check-icon">✅</span>
-                    <span>Wait a few minutes after pushing changes for GitHub Pages to rebuild</span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="solution">
-            <h3>4. Case Sensitivity Issues</h3>
-            <p>GitHub Pages URLs are case-sensitive. Make sure your filenames match the case exactly as referenced in your links.</p>
-            
-            <div class="step">
-                <p><span class="status status-warning">Check</span> Verify that all file references use the correct case:</p>
-                <pre>&lt;!-- Check all links in your HTML --&gt;
-&lt;a href="about.html"&gt;About&lt;/a&gt;  &lt;!-- not About.html --&gt;
 
-&lt;!-- Check all asset references --&gt;
-&lt;img src="images/logo.png" alt="Logo"&gt;  &lt;!-- not Images/logo.png --&gt;</pre>
+    <main>
+      <section class="hero">
+        <div>
+          <div style="color:var(--accent);font-weight:700">Coming Soon</div>
+          <h1>InlineNode — Practical embedded debugging & firmware tutorials</h1>
+          <p class="lead">Real-world guides, step-by-step debug workflows, and ready-to-use resources for students and engineers. Launching soon with STM32, ESP32, UART/SPI/I2C guides and free cheat-sheets.</p>
+          <p style="margin-top:12px"><a class="cta" href="#newsletter">Get notified</a></p>
+
+          <div style="margin-top:18px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+            <div class="card">
+              <div style="font-weight:700">First tutorial</div>
+              <div style="color:var(--muted);font-size:13px;margin-top:6px">STM32 Getting Started — Toolchain, CubeMX & blink</div>
             </div>
+            <div class="card">
+              <div style="font-weight:700">Free resource</div>
+              <div style="color:var(--muted);font-size:13px;margin-top:6px">Inline Debugging Checklist (PDF)</div>
+            </div>
+          </div>
         </div>
-        
-        <h2>GitHub Pages Configuration Checklist</h2>
-        
-        <div class="checklist">
-            <div class="check-item">
-                <span class="check-icon">📁</span>
-                <span>Root directory contains <code>index.html</code> (lowercase)</span>
-            </div>
-            <div class="check-item">
-                <span class="check-icon">📄</span>
-                <span><code>CNAME</code> file in root with correct domain (no extension)</span>
-            </div>
-            <div class="check-item">
-                <span class="check-icon">🌐</span>
-                <span>DNS configured correctly (A records for apex, CNAME for www)</span>
-            </div>
-            <div class="check-item">
-                <span class="check-icon">⚙️</span>
-                <span>GitHub Pages enabled in repository settings</span>
-            </div>
-            <div class="check-item">
-                <span class="check-icon">🔍</span>
-                <span>All file references use correct case sensitivity</span>
-            </div>
-            <div class="check-item">
-                <span class="check-icon">⏱️</span>
-                <span>Allowed time for changes to propagate (up to 24 hours for DNS)</span>
-            </div>
+
+        <aside class="card">
+          <div style="font-weight:700;margin-bottom:8px">Join the launch list</div>
+          <form id="subscribe" class="subscribe" action="#" method="post">
+            <input type="email" name="email" placeholder="you@domain.com" required />
+            <button class="subscribe-btn" type="submit">Notify me</button>
+          </form>
+          <div style="color:var(--muted);font-size:13px;margin-top:8px">No spam — just useful tutorials and the free checklist.</div>
+        </aside>
+      </section>
+
+      <section id="about" style="margin-top:28px">
+        <h2>About InlineNode</h2>
+        <div class="card" style="margin-top:12px">
+          <p style="color:var(--muted)">InlineNode is a small, practical site built for embedded engineers and students. Expect concise tutorials, debugging workflows, sample code, and resources that help you solve real problems fast.</p>
         </div>
-        
-        <h2>Testing Your Configuration</h2>
-        
-        <div class="step">
-            <p>To verify your GitHub Pages site is working without DNS issues, try accessing it via GitHub's provided URL:</p>
-            <p><code>https://yourusername.github.io/repositoryname</code></p>
-            <p>If this works but your custom domain doesn't, the issue is with your DNS configuration.</p>
+      </section>
+
+      <section id="contact" style="margin-top:24px">
+        <h2>Contact</h2>
+        <div class="card" style="margin-top:8px">
+          <p style="color:var(--muted)">Email: <a href="mailto:you@inlinenode.com" style="color:var(--accent);text-decoration:none">you@inlinenode.com</a></p>
         </div>
-        
-        <div class="tip">
-            <p><strong>Pro Tip:</strong> Use the GitHub Pages health check to verify your domain configuration:</p>
-            <ol>
-                <li>Go to your repository on GitHub</li>
-                <li>Navigate to Settings → Pages</li>
-                <li>Look for the "Custom domain" section</li>
-                <li>If there are issues, you'll see an error message with details</li>
-            </ol>
-        </div>
-        
-        <h2>Need More Help?</h2>
-        
-        <div class="step">
-            <p>If you've tried all these steps and are still experiencing issues:</p>
-            <ul>
-                <li>Check GitHub Status: <a href="https://www.githubstatus.com/" target="_blank">https://www.githubstatus.com/</a></li>
-                <li>Consult GitHub Pages Documentation: <a href="https://docs.github.com/en/pages" target="_blank">https://docs.github.com/en/pages</a></li>
-                <li>Search for similar issues on GitHub Community: <a href="https://github.com/orgs/community/discussions" target="_blank">https://github.com/orgs/community/discussions</a></li>
-            </ul>
-        </div>
-    </div>
-    
+      </section>
+
+    </main>
+
     <footer>
-        <p>This troubleshooting guide was created to help resolve GitHub Pages deployment issues.</p>
-        <p>For inlinenode.com | Last updated: March 2023</p>
+      © <span id="year"></span> InlineNode • Built for engineers
     </footer>
+  </div>
+
+<script>
+  document.getElementById('year').innerText = new Date().getFullYear();
+  document.getElementById('subscribe').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Thanks — you\'re on the list (placeholder). Replace form action with your Mailchimp/ConvertKit URL to collect emails.');
+  });
+</script>
 </body>
 </html>
